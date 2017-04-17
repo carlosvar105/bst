@@ -1,0 +1,101 @@
+.gray-background{
+  background-color: #f3f3f3;
+}
+.white-background{
+  font-family: "Arial", Helvetica, sans-serif;
+  background-color: white;
+  margin: 30px 40px 0px 40px;
+  padding:22px 33px 0 33px;
+  border-radius: 6px;
+  height: auto;
+  overflow: auto !important;
+}
+.gray-box{
+  background-color: #f3f3f3;
+  width: 460px;
+  border: 1px solid #d4d4d4;
+  padding: 15px 0px 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 42px;
+}
+
+.person-box:hover .closeicon{
+  display: inherit;
+}
+
+.paddingleft{
+  padding-left: 4px;
+}
+.paddingtop{
+  padding-top:20px;
+}
+
+input{
+  margin-left: 10px !important;
+  width: 300px;
+  height: 30px;
+  border: none;
+}
+
+label{
+  font-weight: 400 !important;
+}
+
+button{
+  border: none;
+  color: white !important;
+  background-color: #7e7eff;
+  padding: 3px 12px;
+}
+
+.marginbutton{
+  margin-left: 82px !important;
+  margin-top: 25px;
+}
+
+hr{
+  border-top: 1px solid #d4d4d4 !important;
+  padding-bottom: 15px !important;
+}
+
+.list-section{
+  width: 100%;
+  margin-right: 33px !important;
+  height:20px;
+  height: auto;
+  overflow: auto !important;
+  margin-bottom: 20px;
+}
+
+.no-padding{
+  padding: 0;
+}
+
+.person-box{
+  height: 120px;
+  margin: 20px 0;
+  background-color: #f3f3f3;
+  border-radius: 6px;
+}
+
+.pictureformat{
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+  float: left;
+}
+
+.name{
+  margin-top:40px;
+  float:left;
+  overflow: auto;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.closeicon{
+  height:30px;
+  width: 30px;
+  float:right;
+  display: none;
+}

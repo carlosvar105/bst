@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="css/application.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<?php
+/*Get list of people from the .json file*/
+$jsonString = file_get_contents('list.json');
+$data = json_decode($jsonString, true);
+?>
+<!-- Visible html starts here -->
+<body class = "gray-background">
+  <div class = "white-background">
+    <div id="main-content">
+      <form class = "gray-box" action="submitperson.php" method="post">
+        <div>
+          <label class = "paddingleft">Full Name</label>
+          <input name="name" type="text" required />
+        </div>
+        <div class = "paddingtop">
+          <label>Photo URL</label>
+          <input name="photo_url" />
+        </div>
+        <button  class = "marginbutton" type="submit">Create</button>
+      </form>
+
+      <hr />
+
+      <!-- List goes here. -->
+      <div class = "list-section row-fluid">
+        <?php for($i = 0; $i < sizeof($data); $i++){
+          $url = "img/default.png";
+          if (filter_var($data[$i]["url"], FILTER_VALIDATE_URL)) {
+            $url = $data[$i]["url"];
+          }
+          ?>
+          <div class = "col-sm-4" id = "<?php echo $i;?>">
+            <div class = "person-box"><img src="<?php echo $url;?>" class = "pictureformat"> <p class = "name"> <?php echo $data[$i]["name"];?></p>
+              <img src="img/close.png" class = "closeicon" id = "<?php echo $i;?>" onclick="deletePerson(this.id)">
+            </div>
+          </div>
+          <?php } ?>
+          <input type = "hidden" id = "total" value = <?php echo $i; ?>>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+  <script src="js/application.js" type="text/javascript"></script>
+  </html>
